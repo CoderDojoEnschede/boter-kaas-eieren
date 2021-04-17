@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<title>Boter, Kaas en Eieren</title>
+	<link href="boter-kaas-eieren-fancy.css" rel="stylesheet">
+	<script type="text/javascript" src="eenSpeler.js"></script>
+</head>
+<body onload="beeldSpelAf()">
+<table id="speelveld">
+	<tr>
+		<td onclick="veldGekozen(0,0)"><span id="rij_0_kolom_0"></span></td>
+		<td onclick="veldGekozen(0,1)"><span id="rij_0_kolom_1"></span></td>
+		<td onclick="veldGekozen(0,2)"><span id="rij_0_kolom_2"></span></td>
+	</tr>
+	<tr>
+		<td onclick="veldGekozen(1,0)"><span id="rij_1_kolom_0"></span></td>
+		<td onclick="veldGekozen(1,1)"><span id="rij_1_kolom_1"></span></td>
+		<td onclick="veldGekozen(1,2)"><span id="rij_1_kolom_2"></span></td>
+	</tr>
+	<tr>
+		<td onclick="veldGekozen(2,0)"><span id="rij_2_kolom_0"></span></td>
+		<td onclick="veldGekozen(2,1)"><span id="rij_2_kolom_1"></span></td>
+		<td onclick="veldGekozen(2,2)"><span id="rij_2_kolom_2"></span></td>
+	</tr>
+</table>
+<div class="status">
+	<div id="status_begin">Klik 'nieuw spel' om te beginnen</div>
+	<div id="status_speler_aan_zet">Jouw beurt</div>
+	<div id="status_computer_wint">Ik ga winnen!</div>
+	<div id="status_speler_gewonnen">Gefeliciteerd, jij hebt gewonnen</div>
+	<div id="status_computer_gewonnen">Jammer, je hebt verloren</div>
+	<div id="status_gelijkspel">Niet slecht, gelijkspel</div>
+</div>
+<div class="select">
+	<label><input id="spelerBegint" type="radio" name="begin" value="speler" checked="checked"/>Speler
+		begint</label>
+	<label><input id="computerBegint" type="radio" name="begin" value="computer"/>Computer begint</label>
+</div>
+<button onclick="nieuwSpel()">Nieuw spel</button>
+</body>
+</html>

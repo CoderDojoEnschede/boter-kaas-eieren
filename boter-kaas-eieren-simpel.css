@@ -1,0 +1,71 @@
+@import "boter-kaas-eieren-simpel.css";
+
+html {
+	text-align: center;
+}
+
+body {
+	display: inline-block;
+	text-align: center;
+	color: #333;
+}
+
+table {
+	margin: 0 auto;
+}
+
+div.select {
+	margin: 20px auto;
+	width: 10em;
+	text-align: left;
+}
+
+label {
+	display: block;
+}
+
+.select input {
+	margin-right: 20px;
+}
+
+button {
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+td span {
+	font-size: 2px;
+}
+
+span.X {
+	font-size: 36px;
+	color: #8b0000;
+	transition: font-size 300ms ease;
+}
+
+span.O {
+	font-size: 36px;
+	color: #00008b;
+	transition: font-size 300ms ease;
+}
+
+.status {
+	margin: 20px 0;
+}
+
+.status div.zichtbaar {
+	transition: opacity 800ms ease, color 800ms ease, font-size 800ms ease;
+}
+
+#status_gelijkspel.zichtbaar, #status_X_gewonnen.zichtbaar, #status_O_gewonnen.zichtbaar,
+#status_speler_gewonnen.zichtbaar, #status_computer_gewonnen.zichtbaar {
+	font-size: 36px;
+}
+
+#status_X_gewonnen.zichtbaar {
+	color: #8b0000;
+}
+
+#status_O_gewonnen.zichtbaar {
+	color: #00008b;
+}
