@@ -1,9 +1,8 @@
-let computerTeken = 'O';
-let spelerTeken = 'X';
 let bord = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']];
 let spelAfgelopen = false;
-let alleStatussen = ['status_begin', 'status_speler_aan_zet', 'status_computer_wint',
-	'status_speler_gewonnen', 'status_computer_gewonnen', 'status_gelijkspel'];
+let spelerAanZet = 'X';
+let alleStatussen = ['status_begin', 'status_X_aan_zet', 'status_O_aan_zet',
+	'status_X_gewonnen', 'status_O_gewonnen', 'status_gelijkspel'];
 let status = 'status_begin';
 
 function pak(id) {
@@ -11,19 +10,10 @@ function pak(id) {
 }
 
 function nieuwSpel() {
-	const computerBegint = pak('computerBegint').checked;
-	if (computerBegint) {
-		computerTeken = 'X';
-		spelerTeken = 'O';
-	} else {
-		computerTeken = 'O';
-		spelerTeken = 'X';
-	}
 	bord = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']];
 	spelAfgelopen = false;
-	if (computerBegint)
-		doeZet(0, 0, computerTeken);
-	status = 'status_speler_aan_zet';
+	spelerAanZet = 'X';
+	status = 'status_X_aan_zet';
 	beeldSpelAf();
 }
 
@@ -78,21 +68,21 @@ function isBordVol() {
 }
 
 function verwerkZet() {
-	if (isWinnaar(spelerTeken)) {
+	if (isWinnaar('X')) {
 		spelAfgelopen = true;
-		status = 'status_speler_gewonnen';
-	} else if (isWinnaar(computerTeken)) {
+		status = 'status_X_gewonnen';
+	} else if (isWinnaar('O')) {
 		spelAfgelopen = true;
-		status = 'status_computer_gewonnen';
+		status = 'status_O_gewonnen';
 	} else if (isBordVol()) {
 		spelAfgelopen = true;
 		status = 'status_gelijkspel';
+	} else if (spelerAanZet === 'X') {
+		spelAfgelopen = false;
+		status = 'status_X_aan_zet';
 	} else {
 		spelAfgelopen = false;
-		if (zoekBesteZet(spelerTeken).score < 0)
-			status = 'status_computer_wint';
-		else
-			status = 'status_speler_aan_zet';
+		status = 'status_O_aan_zet';
 	}
 }
 
@@ -101,48 +91,14 @@ function veldGekozen(rij, kolom) {
 		return;
 	if (bord[rij][kolom] !== ' ')
 		return;
-	doeZet(rij, kolom, spelerTeken);
-	if (!spelAfgelopen)
-		doeComputerZet();
+	doeZet(rij, kolom);
 	beeldSpelAf();
 }
 
-function doeComputerZet() {
-	const zet = zoekBesteZet(computerTeken);
-	doeZet(zet.rij, zet.kolom, computerTeken);
-}
-
-function doeZet(rij, kolom, teken) {
-	bord[rij][kolom] = teken;
+function doeZet(rij, kolom) {
+	bord[rij][kolom] = spelerAanZet;
+	spelerAanZet = ander(spelerAanZet);
 	verwerkZet();
-}
-
-function zoekBesteZet(teken) {
-	let besteZet = {score: -2};
-	for (let rij = 0; rij < 3; rij++)
-		for (let kolom = 0; kolom < 3; kolom++)
-			if (bord[rij][kolom] === ' ') {
-				const zet = {rij: rij, kolom: kolom};
-				zet.score = berekenScoreVoorZet(zet, teken);
-				if (zet.score > besteZet.score)
-					besteZet = zet;
-			}
-	return besteZet;
-}
-
-function berekenScoreVoorZet(zet, teken) {
-	bord[zet.rij][zet.kolom] = teken;
-	let score;
-	if (isWinnaar(teken)) {
-		score = 1;
-	} else if (isBordVol()) {
-		score = 0;
-	} else {
-		const volgendeZet = zoekBesteZet(ander(teken));
-		score = -volgendeZet.score;
-	}
-	bord[zet.rij][zet.kolom] = ' ';
-	return score;
 }
 
 function ander(teken) {
