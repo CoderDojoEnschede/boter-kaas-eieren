@@ -35,7 +35,7 @@ function nieuwSpel() {
 
 	// --- Opdracht 3 --- //
 
-	spelerAanZet = 'X';
+	spelerAanZet = 'O';
 
 	// --- Opdracht 3 --- //
 
@@ -87,9 +87,8 @@ function isWinnaar(teken) {
 // --- Opdracht 6 --- //
 
 function isKolomWinnaar(kolom, teken) {
-	return bord[0][kolom] === teken
-		&& bord[1][kolom] === teken
-		&& bord[2][kolom] === teken
+	return false
+		&& bord[0][kolom] === teken
 }
 
 // --- Opdracht 6 --- //
@@ -97,9 +96,8 @@ function isKolomWinnaar(kolom, teken) {
 // --- Opdracht 5 --- //
 
 function isRijWinnaar(rij, teken) {
-	return bord[rij][0] === teken
-		&& bord[rij][1] === teken
-		&& bord[rij][2] === teken
+	return false
+		&& bord[rij][0] === teken
 }
 
 // --- Opdracht 5 --- //
@@ -124,16 +122,12 @@ function isBordVol() {
 
 				// --- Opdracht 7 --- //
 
-				return false;
-
 				// --- Opdracht 7 --- //
 			}
 		}
 	}
 
 	// --- Opdracht 8 --- //
-
-	return true;
 
 	// --- Opdracht 8 --- //
 }
