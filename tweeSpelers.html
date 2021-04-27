@@ -7,31 +7,43 @@
 	<script type="text/javascript" src="tweeSpelers.js"></script>
 </head>
 <body onload="beeldSpelAf()">
-<table id="speelveld">
-	<tr>
-		<td onclick="veldGekozen(0,0)"><span id="rij_0_kolom_0"></span></td>
-		<td onclick="veldGekozen(0,1)"><span id="rij_0_kolom_1"></span></td>
-		<td onclick="veldGekozen(0,2)"><span id="rij_0_kolom_2"></span></td>
-	</tr>
-	<tr>
-		<td onclick="veldGekozen(1,0)"><span id="rij_1_kolom_0"></span></td>
-		<td onclick="veldGekozen(1,1)"><span id="rij_1_kolom_1"></span></td>
-		<td onclick="veldGekozen(1,2)"><span id="rij_1_kolom_2"></span></td>
-	</tr>
-	<tr>
-		<td onclick="veldGekozen(2,0)"><span id="rij_2_kolom_0"></span></td>
-		<td onclick="veldGekozen(2,1)"><span id="rij_2_kolom_1"></span></td>
-		<td onclick="veldGekozen(2,2)"><span id="rij_2_kolom_2"></span></td>
-	</tr>
-</table>
-<div class="status">
-	<div id="status_begin">Klik 'nieuw spel' om te beginnen</div>
-	<div id="status_X_aan_zet">Speler "X" is aan zet</div>
-	<div id="status_O_aan_zet">Speler "O" is aan zet</div>
-	<div id="status_X_gewonnen">Speler "X" heeft gewonnen</div>
-	<div id="status_O_gewonnen">Speler "O" heeft gewonnen</div>
-	<div id="status_gelijkspel">Gelijkspel</div>
-</div>
-<button onclick="nieuwSpel()">Nieuw spel</button>
+
+	<!-- Opdracht 4 -->
+
+	<table id="speelveld">
+		<tr>
+			<td onclick="veldGekozen(0,0)"><span id="rij_0_kolom_0"></span></td>
+			<td onclick="veldGekozen(0,1)"><span id="rij_0_kolom_1"></span></td>
+			<td onclick="veldGekozen(0,2)"><span id="rij_0_kolom_2"></span></td>
+		</tr>
+		<tr>
+			<td onclick="veldGekozen(1,0)"><span id="rij_1_kolom_0"></span></td>
+			<td onclick="veldGekozen(1,1)"><span id="rij_1_kolom_1"></span></td>
+			<td onclick="veldGekozen(1,2)"><span id="rij_1_kolom_2"></span></td>
+		</tr>
+		<tr>
+			<td onclick="veldGekozen(2,0)"><span id="rij_2_kolom_0"></span></td>
+			<td onclick="veldGekozen(2,1)"><span id="rij_2_kolom_1"></span></td>
+			<td onclick="veldGekozen(2,2)"><span id="rij_2_kolom_2"></span></td>
+		</tr>
+	</table>
+
+	<!-- Opdracht 4 -->
+
+	<div class="status">
+		<div id="status_begin">Klik 'nieuw spel' om te beginnen</div>
+		<div id="status_X_aan_zet">Speler "X" is aan zet</div>
+		<div id="status_O_aan_zet">Speler "O" is aan zet</div>
+		<div id="status_X_gewonnen">Speler "X" heeft gewonnen</div>
+		<div id="status_O_gewonnen">Speler "O" heeft gewonnen</div>
+		<div id="status_gelijkspel">Gelijkspel</div>
+	</div>
+
+	<!-- Opdracht 1 en 2 -->
+
+	<button onclick="nieuwSpel()">Nieuw spel</button>
+
+	<!-- Opdracht 1 en 2  -->
+
 </body>
 </html>
