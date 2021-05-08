@@ -8,19 +8,19 @@ Het is moeilijk om dat helemaal zelf te leren. Daarom hebben de begeleiders van 
 
 Elke opdracht bevat uitleg, en dingen die jij zelf moet doen. De dingen die jij zelf moet doen, staan aangegeven met `▶▶▶`.
 
-// TODO: twee onderdelen, eerst twee spelers, dan tegen de computer spelen in je eentje.
-
 ### Opdracht 0: Openen van programmeeromgeving
 
 De code staat in Trinket. Dat is een website waarop je kan programmeren, en direct het resultaat kan bekijken.
 
-▶▶▶ Open Trinket door op de link te klikken: // TODO trinket link
+▶▶▶ Open Trinket door op de link te klikken: https://trinket.io/embed/html/b9cfb3c6b4
 
 Je moet nu aan de linker kant code zien, en aan de rechter kant het Boter, Kaas en Eieren spel.
 
 Als je aan de linker kant de code aanpast, dan verandert de website automatisch na een paar seconden aan de rechterkant.
 
 Dat was gemakkelijk! Nu komt het echte werk!
+
+![](images/1.png)
 
 ### Opdracht 1: Een knop
 
@@ -42,6 +42,8 @@ De *tag* met *button* (het Engelse woord voor 'knop') zorg ervoor dat er een kno
 
 Zie je de knop?
 
+![](images/2.png)
+
 ### Opdracht 2: Beginnen
 
 Klik eens op de knop die je zojuist hebt gemaakt. Er gebeurt nog steeds niets. Dat is saai.
@@ -54,6 +56,8 @@ Wij maken een attribuut voor *klik*, omdat we op de knop klikken, en er dan iets
 
 Klik nog eens op de knop. Nu gebeurt er wel iets! Het spel begint en de spelers kunnen om en om een letter plaatsen in het veld.
 
+![](images/3.png)
+
 ### Opdracht 3: Beginspeler
 
 Klik op de knop om een nieuw spel te starten.
@@ -65,6 +69,8 @@ We gaan de code goed maken, zodat de beginspeler `X` is.
 ▶▶▶ Zoek *Opdracht 3* in het bestand `tweeSpelers.js`.
 
 ▶▶▶ Verander de `'O'` naar een `'X'` zodat als eerste speler `X` aan zet is.
+
+![](images/4.png)
 
 ### Opdracht 4: Het bord
 
@@ -89,6 +95,8 @@ De vakjes staan in `<table>`, elke rij is een `<tr>` en elk vakje van een rij is
 ▶▶▶ Zoek de tweede `<tr>`.
 
 ▶▶▶ Zoek de derde `<td>`. Welk *id* heeft dit vakje? Waarom?
+
+![](images/5.png)
 
 ### Opdracht 5: Wie heeft er gewonnen in de rij?
 
@@ -120,6 +128,8 @@ Is het gelukt? Probeer nogmaals het spel te spelen, door `X` in de bovenste rij 
 
 Nu moet *Speler "X" heeft gewonnen* worden weergegeven zodra de derde `X` is gezet.
 
+![](images/6.png)
+
 ### Opdracht 6: Wie heeft er gewonnen in de kolom?
 
 We gaan nu bijna hetzelfde doen als in de vorige opdracht, maar nu voor kolommen in plaats van rijen.
@@ -135,6 +145,8 @@ Probeer het spel te spelen, door `X` in de linker kolom te plaatsen, en `O` in d
 Probeer nogmaals het spel te spelen, door `X` in de linker kolom te plaatsen, en `O` in de rechter kolom.
 
 Nu moet *Speler "X" heeft gewonnen* worden weergegeven zodra de derde `X` is gezet.
+
+![](images/7.png)
 
 ### Opdracht 7: Een bord vol
 
@@ -154,6 +166,8 @@ In de functie wordt elke rij en kolom (elk vakje) van het bord bekeken of het le
 
 ▶▶▶ Zet `return true` of `return false` neer in de functie *isBordVol*.
 
+![](images/8.png)
+
 ### Opdracht 8: Een bord leeg
 
 ▶▶▶ Zoek *Opdracht 8* in het bestand `tweeSpelers.js`.
@@ -169,6 +183,8 @@ De letters `X` en `O` zijn een beetje saai. Ze zijn allebei zwart. We kunnen ze 
 ▶▶▶ Vul bij de `td .X` en `td .O`, tussen `{` en `}`, de kleur in die `X` en `O` moeten krijgen met `color: ...`. Vul op de puntjes een kleur in, bijvoorbeeld `red` (rood), `green` (groen), `yellow` (geel), `black` (zwart), `white` (wit) of `purple` (paars).
 
 Probeer een spel te spelen. Nu moeten de `X` en `O` een kleurtje hebben als ze worden geplaatst.
+
+![](images/9.png)
 
 ### Opdracht 10: Knop aanpassen
 
@@ -188,4 +204,4 @@ Ten slotte geven we de knop een dikke rand met een kleur. Dat doen we met de CSS
 
 ▶▶▶ Zet binnen de `button`, tussen de `{` en `}`, de rand neer, bijvoorbeeld `border: 1px solid red;`.  De dikte kan elk getal zijn met `px` erachter. Het type rand kan `solid` (doorgetrokken), `dashed` (streepjes), `dotted` (puntjes) en `double` (dubbel). De kleur kan dezelfde kleuren zijn als van opdracht 9.
 
-// TODO screenshots
+![](images/10.png)
