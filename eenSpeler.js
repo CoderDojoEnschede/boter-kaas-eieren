@@ -3,8 +3,9 @@ let spelerTeken = 'X';
 let bord = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']];
 let spelAfgelopen = false;
 let alleStatussen = ['status_begin', 'status_speler_aan_zet', 'status_computer_wint',
-	'status_speler_gewonnen', 'status_computer_gewonnen', 'status_gelijkspel'];
+	'status_speler_gewonnen', 'status_computer_gewonnen', 'status_gelijkspel', 'status_computer_aan_zet'];
 let status = 'status_begin';
+let computerNadenkTijd = 1000;
 
 function pak(id) {
 	return document.getElementById(id);
@@ -21,9 +22,16 @@ function nieuwSpel() {
 	}
 	bord = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']];
 	spelAfgelopen = false;
-	if (computerBegint)
-		doeZet(0, 0, computerTeken);
-	status = 'status_speler_aan_zet';
+	if (computerBegint) {
+        status = 'status_computer_aan_zet';
+        beeldSpelAf();
+        
+        setTimeout(() => {
+            doeZet(0, 0, computerTeken);
+            beeldSpelAf();
+        }, computerNadenkTijd);
+    }else status = 'status_speler_aan_zet';
+
 	beeldSpelAf();
 }
 
@@ -101,6 +109,8 @@ function veldGekozen(rij, kolom) {
 		return;
 	if (bord[rij][kolom] !== ' ')
 		return;
+    if(status === 'status_computer_aan_zet')
+        return;
 	doeZet(rij, kolom, spelerTeken);
 	if (!spelAfgelopen)
 		doeComputerZet();
@@ -109,7 +119,14 @@ function veldGekozen(rij, kolom) {
 
 function doeComputerZet() {
 	const zet = zoekBesteZet(computerTeken);
-	doeZet(zet.rij, zet.kolom, computerTeken);
+
+    status = 'status_computer_aan_zet';
+    beeldSpelAf();
+
+	setTimeout(() => {
+        doeZet(zet.rij, zet.kolom, computerTeken);
+        beeldSpelAf();
+    }, computerNadenkTijd);
 }
 
 function doeZet(rij, kolom, teken) {
