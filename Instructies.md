@@ -205,3 +205,21 @@ Ten slotte geven we de knop een dikke rand met een kleur. Dat doen we met de CSS
 ▶▶▶ Zet binnen de `button`, tussen de `{` en `}`, de rand neer, bijvoorbeeld `border: 1px solid red;`.  De dikte kan elk getal zijn met `px` erachter. Het type rand kan `solid` (doorgetrokken), `dashed` (streepjes), `dotted` (puntjes) en `double` (dubbel). De kleur kan dezelfde kleuren zijn als van opdracht 9.
 
 ![](images/10.png)
+
+### Opdracht 11: Layout aanpassen
+
+We kunnen het spel ler nog mooier uit laten zien. Daar hebben we al iets voor klaar gezet.
+
+Tot nu toe hebben we steeds het bestand `boter-kaas-eieren-simpel.css` aangepast. Een `.css` bestand is een stijl bestand. We kunnen in een keer de stijl van het spel veranderen door een ander bestand te gebruiken.
+
+In het bestand `boter-kaas-eieren-fancy.css` staat een verbeterde stijl voor het spel. We gaan de stijl toepassen. Voel je vrij om het bestand `boter-kaas-eieren-fancy.css` te openen, en de verschillen te zoeken met `boter-kaas-eieren-simpel.css`.
+
+Het stijl-bestand kunnen we aanpassen in de HTML van het spel.
+
+▶▶▶ Zoek *Opdracht 11* in het bestand `boter-kaas-eieren-simpel.css`.
+
+▶▶▶ Verander de referentie van `boter-kaas-eieren-simpel.css` naar `boter-kaas-eieren-fancy.css`.
+
+Het spel moet nu automatisch veranderen naar de nieuwe stijl. Probeer ook in `boter-kaas-eieren-fancy.css` aanpassingen te maken naar jouw eigen wens.
+
+![](images/11.png)
